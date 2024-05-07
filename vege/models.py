@@ -7,4 +7,3 @@ class Receipe(models.Model):
     receipe_decription = models.TextField()
     receipe_image = models.ImageField(upload_to="receipe")
 
-
