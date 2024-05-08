@@ -21,7 +21,33 @@
           </div>
         <button type="submit" class="btn btn-success">Add Receipe</button>
       </form>
-
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Receipe Name</th>
+          <th scope="col">Receipe Dec</th>
+          <th scope="col">Receipe Image</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rec in receipe %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{rec.receipe_name}}</td>
+          <td>{{rec.receipe_decription}}</td>
+          <td>
+            <img src="/media/{{rec.receipe_image}}" style="height: 80px;"></img>
+          </td>
+          <td>
+            <a href= "/delete-receipe/{{rec.id}}/" class="btn btn-danger">Delete<a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  
 </div>  
     
 {% endblock %}
